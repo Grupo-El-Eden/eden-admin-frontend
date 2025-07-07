@@ -43,6 +43,9 @@
       "@interfaces/*": [
         "./src/interfaces/*"
       ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
     },
     "skipLibCheck": true,
 
