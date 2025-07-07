@@ -1,5 +1,14 @@
 {
-  "es": {
-    "translation": {}
-  }
+    "translation": {
+      "login": {
+        "welcome": "Bienvenido",
+        "login_to_account": "Inicia sesión en tu cuenta de El Eden",
+        "continue": "Continuar",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "forgot_password": "¿Olvidaste tu contraseña?",
+        "terms_of_service": "Términos de servicio",
+        "privacy_policy": "Política de privacidad"
+      }
+    }
 }

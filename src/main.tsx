@@ -9,8 +9,8 @@ import QueryProvider from './config/providers/QueryProvider.tsx'
 import { store } from '@store/index'
 import { Provider } from 'react-redux'
 import { I18nextProvider } from "react-i18next"
-import { ThemeProvider } from './config/providers/ThemeProvider.tsx'
-import { ConfettiProvider } from './config/providers/ConfettiProvider.tsx'
+import { ThemeProvider } from '@/config/providers/ThemeProvider.tsx'
+import { ConfettiProvider } from '@/config/providers/ConfettiProvider.tsx'
 
 function Main() {
   return (
@@ -19,7 +19,7 @@ function Main() {
         <ConfettiProvider>
           <ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'>
             <I18nextProvider i18n={i18next}>
-              <App />
+                <App />
             </I18nextProvider>
           </ThemeProvider>
         </ConfettiProvider>
