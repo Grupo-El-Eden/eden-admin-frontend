@@ -9,6 +9,52 @@
         "forgot_password": "Forgot your password?",
         "terms_of_service": "Terms of Service",
         "privacy_policy": "Privacy Policy"
+      },
+      "layoutsError": {
+       "error500":{
+        "title": "Error 500",
+        "subtitle": "Internal server error.",
+        "description": "Sorry, something has gone wrong with our servers. Our technical team has been notified and is working to resolve the problem.",
+        "description2": "If the problem persists, please contact our support team.",
+        "errorcode": "Error code",
+        "time": "Time for error",
+        "buttontryagain": "Try again",
+        "buttonback": "Back",
+        "buttonhome": "Home"
+       },
+       "error404": {
+        "title": "Error 404",
+        "subtitle": "Page not found.",
+        "description": "The page you are looking for does not exist or has been moved. Check the URL or navigate from the main menu.",
+        "description2": "Need help? Contact our support team",
+        "errorcode": "Error code",
+        "time": "Time for error",
+        "buttonhome": "Home",
+        "buttonback": "Back",
+        "buttonreload": "Reload"
+       },
+       "error403": {
+        "title": "Error 403",
+        "subtitle": "Access denied.",
+        "description": "You do not have permission to access this page. If you believe this is an error, please contact your administrator.",
+        "description2": "If you need access, please contact the system administrator.",
+        "errorcode": "Error code",
+        "time": "Time for error",
+        "buttonlogin": "Login",
+        "buttonback": "Back",
+        "buttonhome": "Home"
+       },
+       "error401": {
+        "title": "Error 401",
+        "subtitle": "Unauthorized.",
+        "description": "You need to log in to access this page. Your session may have expired.",
+        "description2": "If you need help, please contact our support team.",
+        "errorcode": "Error code",
+        "time": "Time for error",
+        "buttonlogin": "Login",
+        "buttonback": "Back",
+        "buttonhome": "Home"
+       }
       }
     }
 }

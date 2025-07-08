@@ -9,6 +9,54 @@
         "forgot_password": "¿Olvidaste tu contraseña?",
         "terms_of_service": "Términos de servicio",
         "privacy_policy": "Política de privacidad"
+      },
+      "layoutsError": {
+       "error500":{
+        "title": "Error 500",
+        "subtitle": "Error interno del servidor.",
+        "description": "Lo sentimos, algo salió mal en nuestros servidores. Nuestro equipo técnico ha sido notificado y está trabajando para resolver el problema.",
+        "description2": "Si el problema persiste, contacta a nuestro equipo de soporte.",
+        "errorcode": "Código de error: 500",
+        "time": "Hora del error",
+        "buttontryagain": "Intentar de nuevo",
+        "buttonback": "Volver",
+        "buttonhome": "Casa"
+       },
+       "error404": {
+        "title": "Error 404",
+        "subtitle": "Página no encontrada.",
+        "description": "La página que estás buscando no existe o ha sido movida. Verifica la URL o navega desde el menú principal.",
+        "description2": "¿Necesitas ayuda? Contacta a nuestro equipo de soporte",
+        "errorcode": "Código de error: 404",
+        "time": "Hora del error",
+        "buttonhome": "Inicio",
+        "buttonback": "Volver",
+        "buttonreload": "Recargar"
+       },
+       "error403": {
+        "title": "Error 403",
+        "subtitle": "Acceso denegado.",
+        "description": "No tienes permiso para acceder a esta página. Si crees que esto es un error, contacta a tu administrador.",
+        "description2": "Si necesitas acceso, contacta al administrador del sistema.",
+        "errorcode": "Código de error: 403",
+        "time": "Hora del error",
+        "buttonlogin": "Iniciar sesión",
+        "buttonback": "Volver",
+        "buttonhome": "Inicio"
+       },
+       "error401": {
+        "title": "Error 401",
+        "subtitle": "No autorizado.",
+        "description": "Necesitas iniciar sesión para acceder a esta página. Tu sesión puede haber expirado.",
+        "description2": "Si necesitas ayuda, contacta a nuestro equipo de soporte.",
+        "errorcode": "Código de error: 401",
+        "time": "Hora del error",
+        "buttonlogin": "Iniciar sesión",
+        "buttonback": "Volver",
+        "buttonhome": "Inicio"
+       }
       }
     }
+    
+    
 }
