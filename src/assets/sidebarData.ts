@@ -20,7 +20,7 @@ import {
 } from 'lucide-react'
 import { AudioWaveform, Command, GalleryVerticalEnd } from 'lucide-react'
 import { ClerkLogo } from '@/assets/clerk-logo'
-import { type SidebarData } from '../types'
+import { type SidebarData } from '../components/layout/types'
 
 export const sidebarData: SidebarData = {
   user: {

@@ -19,7 +19,7 @@ function Main() {
         <ConfettiProvider>
           <ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'>
             <I18nextProvider i18n={i18next}>
-                <App />
+              <App />
             </I18nextProvider>
           </ThemeProvider>
         </ConfettiProvider>

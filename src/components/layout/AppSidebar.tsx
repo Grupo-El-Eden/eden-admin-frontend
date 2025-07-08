@@ -4,11 +4,11 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from '@/components/ui/sidebar'
-import { NavGroup } from '@/components/layout/nav-group'
-import { NavUser } from '@/components/layout/nav-user'
-import { TeamSwitcher } from '@/components/layout/team-switcher'
-import { sidebarData } from './data/sidebar-data'
+} from '@components/ui/Sidebar'
+import { sidebarData } from '@assets/sidebarData'
+import { NavUser } from '@components/layout/NavUser'
+import { NavGroup } from '@components/layout/NavGroup'
+import { TeamSwitcher } from '@components/layout/TeamSwitcher'
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (

@@ -1,0 +1,6 @@
+{
+  "editor.tabSize": 2,
+  "i18nInspect.distributionHash": "",
+  "i18nInspect.languageCode": "es",
+  "i18nInspect.translationResource": "./src/locales/es.json"
+}

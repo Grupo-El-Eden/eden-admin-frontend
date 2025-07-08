@@ -1,8 +1,8 @@
 {
     "translation": {
       "login": {
-        "welcome": "welcome",
-        "login_to_account": "Login to your El Eden Account",
+        "welcome": "Welcome",
+        "login_to_account": "Login to your El Eden Group Account",
         "continue": "Login",
         "email": "Email",
         "password": "Password",

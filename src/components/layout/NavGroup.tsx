@@ -1,11 +1,11 @@
 import { ReactNode } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible'
+} from '@components/ui/Collapsible'
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -16,8 +16,8 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   useSidebar,
-} from '@/components/ui/sidebar'
-import { Badge } from '@components/ui/badge'
+} from '@components/ui/Sidebar'
+import { Badge } from '@components/ui/Badge'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,7 +25,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@components/ui/dropdown-menu'
+} from '@components/ui/DropdownMenu'
 import { NavCollapsible, NavItem, NavLink, type NavGroup } from './types'
 
 export function NavGroup({ title, items }: NavGroup) {

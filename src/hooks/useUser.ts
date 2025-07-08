@@ -1,12 +1,12 @@
+import { RootState } from "@config/store";
+import { IUser } from "@/interface/models";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setUser,
   clearUser,
   setToken,
   setProfilePicture
-} from "@/config/store/reducers/user.slice";
-import { RootState } from "@/config/store";
-import { IUser } from "@/interface/models";
-import { useDispatch, useSelector } from "react-redux";
+} from "@config/store/reducers/user.slice";
 
 function useUser() {
   const dispatch = useDispatch();

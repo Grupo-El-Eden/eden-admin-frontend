@@ -1,9 +1,9 @@
 import Cookies from 'js-cookie'
-import { useSelector, useDispatch } from 'react-redux'
-import { setUser, setToken, clearUser } from '@/config/store/reducers/user.slice'
-import { useNavigate } from 'react-router-dom'
-import { RootState } from '@/config/store'
+import { RootState } from '@config/store'
 import { IUser } from '@/interface/models'
+import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { setUser, setToken, clearUser } from '@config/store/reducers/user.slice'
 
 export default function useAuth() {
   const navigate = useNavigate()
