@@ -1,7 +1,7 @@
 import { AlertTriangle, Home, RefreshCw, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Alert, AlertDescription } from "@components/ui/Alert"
 import { useTranslation } from "react-i18next"
 
 
@@ -38,7 +38,7 @@ export default function Error500() {
             <AlertDescription className="text-destructive">{t("translation.layoutsError.error500.description")}</AlertDescription>
           </Alert>
 
-            <div className="text-center text-sm text-muted-foreground space-y-1">
+          <div className="text-center text-sm text-muted-foreground space-y-1">
             <p>
               {t("translation.layoutsError.error500.errorcode")}: <span className="font-mono font-semibold">500</span>
             </p>

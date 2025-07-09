@@ -1,7 +1,7 @@
 import { Lock, Home, ArrowLeft, LogIn } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Alert, AlertDescription } from "@components/ui/Alert"
 import { useTranslation } from "react-i18next"
 
 export default function Error401() {
@@ -16,7 +16,7 @@ export default function Error401() {
   const handleLogin = () => {
     window.location.href = "/login"
   }
-const { t } = useTranslation("common")
+  const { t } = useTranslation("common")
   return (
     <div className="min-h-screen bg-muted/30 flex items-center justify-center p-4">
       <Card className="w-full max-w-md shadow-2xl border-0 bg-card/80 backdrop-blur-sm">
