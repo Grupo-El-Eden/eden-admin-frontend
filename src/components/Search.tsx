@@ -1,6 +1,6 @@
 import { LucideSearch } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useSearch } from '@config/providers/Search-context'
+import { useSearch } from '@/config/providers/SearchContext'
 import { Button } from '@components/ui/Button'
 
 interface Props {

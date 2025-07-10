@@ -1,10 +1,9 @@
-import * as React from 'react'
 import { Outlet } from 'react-router-dom'
 import { SidebarProvider } from '@/components/ui/Sidebar'
 import { AppSidebar } from '@/components/layout/AppSidebar'
-import { Header } from '@/components/layout/header'
+import { Header } from '@/components/layout/Header'
 
-export function SidebarLayout() {
+export function AuthLayout() {
   return (
     <SidebarProvider>
       <AppSidebar />

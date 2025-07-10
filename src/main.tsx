@@ -12,7 +12,7 @@ import { I18nextProvider } from "react-i18next"
 import { ThemeProvider } from '@/config/providers/ThemeProvider.tsx'
 import { ConfettiProvider } from '@/config/providers/ConfettiProvider.tsx'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { SearchProvider } from '@config/providers/Search-context.tsx'
+import { SearchProvider } from '@/config/providers/SearchContext.tsx'
 
 function Main() {
   return (
