@@ -59,9 +59,9 @@ export function CommandMenu() {
                     </CommandItem>
                   )
 
-                return navItem.items?.map((subItem, i) => (
+                return navItem.items?.map((subItem, index) => (
                   <CommandItem
-                    key={`${navItem.title}-${subItem.url}-${i}`}
+                    key={`${navItem.title}-${subItem.url}-${index}`}
                     value={`${navItem.title}-${subItem.url}`}
                     onSelect={() => {
                       runCommand(() => navigate(subItem.url))
