@@ -1,6 +1,10 @@
 
-export default function ErrorManagerProvider() {
+import { ReactNode } from 'react';
+
+export default function ErrorManagerProvider({ children }: { children: ReactNode }) {
   return (
-    <div>ErrorManagerProvider</div>
-  )
+    <div>
+      {children}
+    </div>
+  );
 }
