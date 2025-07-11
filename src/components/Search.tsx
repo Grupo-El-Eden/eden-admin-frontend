@@ -5,7 +5,6 @@ import { Button } from '@components/ui/Button'
 
 interface Props {
   className?: string
-  type?: React.HTMLInputTypeAttribute
   placeholder?: string
 }
 
