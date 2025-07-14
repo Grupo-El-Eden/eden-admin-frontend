@@ -1,5 +1,4 @@
-//// filepath: src/config/providers/ErrorManagerProvider.tsx
-import * as React from 'react'
+import React from 'react';
 import {
   Dialog,
   DialogContent,
@@ -7,55 +6,90 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-} from '@components/ui/Dialog'
-import { Button } from '@components/ui/Button'
+} from '@components/ui/Dialog';
+import { Button } from '@components/ui/Button';
 
 interface ErrorManagerContextProps {
-  error: Error | null
-  setError: (error: Error) => void
-  clearError: () => void
+  errors: Error[];
+  pushError: (error: Error) => void;
+  removeError: (index: number) => void;
+  clearAllErrors: () => void;
+  setError: (error: Error) => void;
+  clearError: () => void;
 }
 
-const ErrorManagerContext = React.createContext<ErrorManagerContextProps | undefined>(undefined)
+const ErrorManagerContext = React.createContext<ErrorManagerContextProps | undefined>(undefined);
 
 export const ErrorBoundary = class extends React.Component<{ children: React.ReactNode }, { error: Error | null }> {
   constructor(props: { children: React.ReactNode }) {
-    super(props)
-    this.state = { error: null }
+    super(props);
+    this.state = { error: null };
   }
+  
   static getDerivedStateFromError(error: Error) {
-    return { error }
+    return { error };
   }
+  
   componentDidCatch(error: Error, info: React.ErrorInfo) {
-    console.error(error, info)
+    console.error(error, info);
   }
+  
   render() {
-    if (this.state.error) {
-      // lo dejamos al contexto para mostrar modal
-      return this.props.children
-    }
-    return this.props.children
+    return this.props.children;
   }
-}
+};
 
 export const ErrorManagerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [error, setErrorState] = React.useState<Error | null>(null)
-  const clearError = () => setErrorState(null)
+  const [errors, setErrors] = React.useState<Error[]>([]);
+  
+  const pushError = (error: Error) => {
+    setErrors(prev => [...prev, error]);
+  };
+
+  const removeError = (index: number) => {
+    setErrors(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const clearAllErrors = () => {
+    setErrors([]);
+  };
+
+  const setError = pushError;
+  const clearError = () => {
+    if (errors.length > 0) {
+      removeError(errors.length - 1);
+    }
+  };
+
+  const lastError = errors.length > 0 ? errors[errors.length - 1] : null;
 
   return (
-    <ErrorManagerContext.Provider value={{ error, setError: setErrorState, clearError }}>
+    <ErrorManagerContext.Provider 
+      value={{ 
+        errors,
+        pushError,
+        removeError,
+        clearAllErrors,
+        setError, 
+        clearError 
+      }}
+    >
       <ErrorBoundary>{children}</ErrorBoundary>
 
-      {/* modal que se abre cada vez que hay un error */}
-      <Dialog open={!!error} onOpenChange={clearError}>
+      <Dialog 
+        open={errors.length > 0} 
+        onOpenChange={(open) => {
+          if (!open) clearError();
+        }}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Se ha producido un error</DialogTitle>
             <DialogDescription>
-              {error?.message.startsWith('<') ? (
-                <div dangerouslySetInnerHTML={{ __html: error.message }} />
+              {lastError?.message.startsWith('<') ? (
+                <div dangerouslySetInnerHTML={{ __html: lastError.message }} />
               ) : (
-                <pre className="overflow-auto text-xs">{JSON.stringify(error, null, 2)}</pre>
+                <pre className="overflow-auto text-xs">{JSON.stringify(lastError, null, 2)}</pre>
               )}
             </DialogDescription>
           </DialogHeader>
@@ -65,11 +99,16 @@ export const ErrorManagerProvider: React.FC<{ children: React.ReactNode }> = ({ 
         </DialogContent>
       </Dialog>
     </ErrorManagerContext.Provider>
-  )
-}
+  );
+};
 
 export const useErrorManager = () => {
-  const ctx = React.useContext(ErrorManagerContext)
-  if (!ctx) throw new Error('useErrorManager debe usarse dentro de <ErrorManagerProvider>')
-  return ctx
-}
+  const ctx = React.useContext(ErrorManagerContext);
+  if (!ctx) throw new Error('useErrorManager debe usarse dentro de <ErrorManagerProvider>');
+  return ctx;
+};
+
+export const useErrorStack = () => {
+  const ctx = useErrorManager();
+  return ctx.errors;
+};
