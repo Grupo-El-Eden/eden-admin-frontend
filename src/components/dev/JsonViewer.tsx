@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ChevronRight, ChevronDown, Copy, Check, MoreHorizontal, ChevronUp } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip"
+import { cn } from "@lib/utils"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@components/ui/Tooltip"
 
 type JsonViewerProps = {
   data: any
