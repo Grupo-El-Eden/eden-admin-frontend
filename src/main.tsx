@@ -14,6 +14,7 @@ import { ConfettiProvider } from '@config/providers/ConfettiProvider.tsx'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { SearchProvider } from '@config/providers/SearchContext.tsx'
 import { ErrorManagerProvider } from '@config/providers/ErrorManagerProvider.tsx'
+import { ErrorStackIndicator } from './components/dev/ErrorStackIndicator.tsx'
 
 function Main() {
   return (
@@ -27,6 +28,7 @@ function Main() {
                   <I18nextProvider i18n={i18next}>
                     <App />
                   </I18nextProvider>
+                  <ErrorStackIndicator />
                 </ErrorManagerProvider>
               </ThemeProvider>
             </ConfettiProvider>
