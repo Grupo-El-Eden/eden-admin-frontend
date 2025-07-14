@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/Avatar'
-import { Button } from '@/components/ui/Button'
+import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/Avatar'
+import { Button } from '@components/ui/Button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from '@/components/ui/DropdownMenu'
+} from '@components/ui/DropdownMenu'
 
 export function ProfileDropdown() {
   return (

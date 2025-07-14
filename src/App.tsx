@@ -1,7 +1,8 @@
 import './index.css'
-import { AuthLayout } from '@/components/layout/AuthLayout'
+import { AuthLayout } from '@components/layout/AuthLayout'
 import { Routes, Route } from 'react-router-dom'
-import { DynamicPage } from './lib/lazyImports'
+import { DynamicPage } from '@lib/lazyImports'
+
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Route path="/" element={<DynamicPage page="login" />} />
       <Route element={<AuthLayout />}>
         <Route path="/dashboard" element={<DynamicPage page="summary" />} />
+
       </Route>
       <Route path="/500" element={<DynamicPage page="error500" />} />
       <Route path="/401" element={<DynamicPage page="error401" />} />

@@ -7,7 +7,7 @@ import {
   Moon,
   Sun,
 } from 'lucide-react'
-import { useSearch } from '@/config/providers/SearchContext'
+import { useSearch } from '@config/providers/SearchContext'
 import { useTheme } from '@config/providers/ThemeProvider'
 import {
   CommandDialog,
@@ -17,7 +17,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from '@/components/ui/Command'
+} from '@components/ui/Command'
 import { sidebarData } from '@assets/sidebarData'
 import { ScrollArea } from '@components/ui/ScrollArea'
 
