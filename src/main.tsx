@@ -24,11 +24,11 @@ function Main() {
           <SearchProvider>
             <ConfettiProvider>
               <ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'>
-                <ErrorManagerProvider environment='production'>
+                <ErrorManagerProvider environment='debug'>
                   <I18nextProvider i18n={i18next}>
                     <App />
                   </I18nextProvider>
-                  <ErrorStackIndicator />
+                  <ErrorStackIndicator environment='debug' />
                 </ErrorManagerProvider>
               </ThemeProvider>
             </ConfettiProvider>

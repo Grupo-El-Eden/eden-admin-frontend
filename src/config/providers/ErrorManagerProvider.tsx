@@ -64,7 +64,7 @@ export const ErrorManagerProvider: React.FC<{ environment: Environments, childre
 
   const lastError = errors.length > 0 ? errors[errors.length - 1] : null;
 
-  const allowEnvs = ['development', 'debug'];
+  const allowEnvs = ['debug'];
 
   return (
     <ErrorManagerContext.Provider 
