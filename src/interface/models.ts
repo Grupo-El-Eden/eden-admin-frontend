@@ -1,4 +1,15 @@
 /**
+ * @type {Environments}
+ * @description This type define all environments of application.
+ * It can includes just 3 differents environments.
+ * development | debug | production 
+ * @example
+ * const appEnvironment: Environments = 'development';
+ * // Just can be 'development', 'debug', 'production
+ */
+export type Environments = 'development' | 'debug' | 'production';
+
+/**
  * @type {Roles}
  * @description This type defines the roles available in the application.
  * It includes roles such as 'admin', 'manager', 'coordinator', 'analyst', and 'customer'.

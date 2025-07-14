@@ -8,6 +8,7 @@ import {
   DialogFooter,
 } from '@components/ui/Dialog';
 import { Button } from '@components/ui/Button';
+import { Environments } from '@/interface/models';
 
 interface ErrorManagerContextProps {
   errors: Error[];
@@ -39,7 +40,7 @@ export const ErrorBoundary = class extends React.Component<{ children: React.Rea
   }
 };
 
-export const ErrorManagerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ErrorManagerProvider: React.FC<{ environment: Environments, children: React.ReactNode }> = ({ environment, children }) => {
   const [errors, setErrors] = React.useState<Error[]>([]);
   
   const pushError = (error: Error) => {
@@ -63,6 +64,8 @@ export const ErrorManagerProvider: React.FC<{ children: React.ReactNode }> = ({ 
 
   const lastError = errors.length > 0 ? errors[errors.length - 1] : null;
 
+  const allowEnvs = ['development', 'debug'];
+
   return (
     <ErrorManagerContext.Provider 
       value={{ 
@@ -74,30 +77,36 @@ export const ErrorManagerProvider: React.FC<{ children: React.ReactNode }> = ({ 
         clearError 
       }}
     >
-      <ErrorBoundary>{children}</ErrorBoundary>
+      {
+        allowEnvs.includes(environment) ? (
+          <>
+            <ErrorBoundary>{children}</ErrorBoundary>
 
-      <Dialog 
-        open={errors.length > 0} 
-        onOpenChange={(open) => {
-          if (!open) clearError();
-        }}
-      >
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Se ha producido un error</DialogTitle>
-            <DialogDescription>
-              {lastError?.message.startsWith('<') ? (
-                <div dangerouslySetInnerHTML={{ __html: lastError.message }} />
-              ) : (
-                <pre className="overflow-auto text-xs">{JSON.stringify(lastError, null, 2)}</pre>
-              )}
-            </DialogDescription>
-          </DialogHeader>
-          <DialogFooter>
-            <Button onClick={clearError}>Cerrar</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
+            <Dialog 
+              open={errors.length > 0} 
+              onOpenChange={(open) => {
+                if (!open) clearError();
+              }}
+            >
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Se ha producido un error</DialogTitle>
+                  <DialogDescription>
+                    {lastError?.message.startsWith('<') ? (
+                      <div dangerouslySetInnerHTML={{ __html: lastError.message }} />
+                    ) : (
+                      <pre className="overflow-auto text-xs">{JSON.stringify(lastError, null, 2)}</pre>
+                    )}
+                  </DialogDescription>
+                </DialogHeader>
+                <DialogFooter>
+                  <Button onClick={clearError}>Cerrar</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          </>
+        ) : children
+      }
     </ErrorManagerContext.Provider>
   );
 };

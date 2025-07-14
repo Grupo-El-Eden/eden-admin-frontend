@@ -24,7 +24,7 @@ function Main() {
           <SearchProvider>
             <ConfettiProvider>
               <ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'>
-                <ErrorManagerProvider>
+                <ErrorManagerProvider environment='production'>
                   <I18nextProvider i18n={i18next}>
                     <App />
                   </I18nextProvider>
