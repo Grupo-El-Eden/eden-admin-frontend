@@ -29,7 +29,7 @@ export function LoginForm({
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="micorreo@eleden.com"
                   required
                 />
               </div>
@@ -43,7 +43,7 @@ export function LoginForm({
                     {t("translation.login.forgot_password")}
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input id="password" placeholder="********" type="password" required />
               </div>
               <Button type="submit" className="w-full cursor-pointer">
                 {t("translation.login.continue")}
