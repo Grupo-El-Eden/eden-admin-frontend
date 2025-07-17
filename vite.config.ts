@@ -1,20 +1,18 @@
-import { defineConfig, loadEnv } from 'vite'
-import type { ConfigEnv } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
+import tailwindcss from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react-swc'
+import { defineConfig, loadEnv } from 'vite'
+
+import type { ConfigEnv } from 'vite'
 
 export default ({ mode }: ConfigEnv) => {
-  // carga .env.<mode> desde ./env
   const env = loadEnv(mode, path.resolve(__dirname, 'env'), 'VITE_')
-  // prepara el objeto para injectar en define
   const defineEnv = Object.fromEntries(
     Object.entries(env).map(([k, v]) => [k, JSON.stringify(v)])
   )
 
   return defineConfig({
     define: {
-      // expone las vars a process.env en el bundle
       'process.env': defineEnv
     },
     plugins: [react(), tailwindcss()],
